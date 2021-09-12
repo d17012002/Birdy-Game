@@ -1,10 +1,11 @@
 score = 0;
 cross = true;
 
-var audio = new Audio('BgTune.mp3');
-var audiogo = new Audio('GameOver.mp3');
-var heliSound = new Audio('HeliSound.mp3');
-var missileSound = new Audio('MissileSound.mp3');
+//Variables assigned to the audio files
+var audio = new Audio('Audio/BgTune.mp3');
+var audiogo = new Audio('Audio/GameOver.mp3');
+var heliSound = new Audio('Audio/HeliSound.mp3');
+var missileSound = new Audio('Audio/MissileSound.mp3');
 
 
 
@@ -23,6 +24,7 @@ document.onkeydown = function (event) {
         introRemove = document.querySelector('.intro');
         introRemove.style.visibility = 'hidden';
         obstacleWait.classList.add('obstacleAnimation');
+
         /* Next View and speed up  */
         setTimeout(() => {
             aniDur = parseFloat(window.getComputedStyle(obstacle, null).getPropertyValue('animation-duration'));
@@ -100,6 +102,7 @@ setInterval(() => {
     rocketOffsetX = Math.abs(Bx-Rx);
     rocketOffsetY = Math.abs(By-Ry);
 
+    //Condition for game over
     if (offsetX < 120 && offsetY < 45 || heliOffsetX<90 && heliOffsetY<30 || rocketOffsetX<90 && rocketOffsetY<55) {
         gameOver.style.visibility = 'visible';
         obstacle.classList.remove('obstacleAnimation');
@@ -115,6 +118,7 @@ setInterval(() => {
             audiogo.pause();
         }, 5000);
     }
+    //Updates score
     else if (offsetX < 140 && cross) {
         score += 1;
         UpdateScore(score);
