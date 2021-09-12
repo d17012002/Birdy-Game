@@ -3,6 +3,8 @@ cross = true;
 
 var audio = new Audio('BgTune.mp3');
 var audiogo = new Audio('GameOver.mp3');
+var heliSound = new Audio('HeliSound.mp3');
+var missileSound = new Audio('MissileSound.mp3');
 
 
 
@@ -30,9 +32,11 @@ document.onkeydown = function (event) {
 
         setTimeout(() => {
             heliWait.classList.add('heliAnimation');
+            heliSound.play();
         }, 25000);
         setTimeout(() => {
             missileWait.classList.add('missileAnimation');
+            missileSound.play();
         }, 40000);
 
     }
@@ -96,13 +100,16 @@ setInterval(() => {
     rocketOffsetX = Math.abs(Bx-Rx);
     rocketOffsetY = Math.abs(By-Ry);
 
-    if (offsetX < 120 && offsetY < 45 || heliOffsetX<100 && heliOffsetY<45 || rocketOffsetX<100 && rocketOffsetY<45) {
+    if (offsetX < 120 && offsetY < 45 || heliOffsetX<90 && heliOffsetY<30 || rocketOffsetX<90 && rocketOffsetY<55) {
         gameOver.style.visibility = 'visible';
         obstacle.classList.remove('obstacleAnimation');
+        missile.classList.add('missileAnimation');
         missile.classList.remove('missileAnimation');
         heli.classList.remove('heliAnimation');
         
         audio.pause();
+        heliSound.pause();
+        missileSound.pause();
         audiogo.play(); 
         setTimeout(() => {
             audiogo.pause();

@@ -84,7 +84,7 @@ body{
     background-size: cover;
     position: absolute;
     top: 39%;
-    right: 10%;
+    right: -20%;
 
 }
 
@@ -182,7 +182,7 @@ body{
       left: 45%;
       align-items: center;
       font-size: 15px;
-      color:rgba(37, 36, 36, 0.699);
+      color:white;
       overflow: visible;
       
   }
