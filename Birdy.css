@@ -186,3 +186,29 @@ body{
       overflow: visible;
       
   }
+
+
+  /* Camera */
+  *{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    position: fixed;
+    top: 3%;
+    left: 2%;
+    margin: 0;
+    padding: 0;
+    height: 133px;
+    width: 200px;
+    background-image: url(Img/webcamera.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80px 80px; 
+}
+
+#videoCam{
+    height: 133px;
+    width: 200px;
+   
+}

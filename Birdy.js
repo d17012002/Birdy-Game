@@ -1,3 +1,8 @@
+const webCamElement =  document.getElementById("videoCam");
+const webcam = new Webcam(webCamElement, "user");
+webcam.start();
+
+
 score = 0;
 cross = true;
 
