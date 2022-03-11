@@ -1,5 +1,4 @@
 # Birdy-Game
-This is a fun and super cool birdy game. Help the little birdy to save his life from monstrous airplanes, helicopters and missiles. This is a frontend web dev project. 
 
 
 
